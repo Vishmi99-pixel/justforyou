@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just for You 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #444;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+    }
+
+    .typing {
+      display: inline-block;
+      font-size: 1.5rem;
+      color: #d6336c;
+      white-space: nowrap;
+      border-right: 2px solid #d6336c;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      overflow: hidden;
+      width: 0;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .hearts {
+      position: fixed;
+      bottom: -50px;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      animation: float 6s infinite ease-in;
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-100px) translateY(-800px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .hearts::before,
+    .hearts::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .hearts::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .hearts::after {
+      top: 0;
+      left: -10px;
+    }
+
+    .heart-group {
+      position: absolute;
+      animation-delay: 0s;
+    }
+
+    .heart-group:nth-child(1) { left: 10%; animation-delay: 1s; }
+    .heart-group:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .heart-group:nth-child(3) { left: 50%; animation-delay: 3s; }
+    .heart-group:nth-child(4) { left: 70%; animation-delay: 4s; }
+    .heart-group:nth-child(5) { left: 90%; animation-delay: 5s; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="typing">
+      Warning: You’ve just been hit with a random act of cuteness 😄💖
+    </div>
+    <p style="margin-top: 2rem; font-size: 1.2rem;">
+      This page exists for one reason only: <br>
+      To remind you that you're kinda awesome 🌟<br>
+      (And maybe to make you think of me too 😜)
+    </p>
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="heart-group hearts"></div>
+  <div class="heart-group hearts"></div>
+  <div class="heart-group hearts"></div>
+  <div class="heart-group hearts"></div>
+  <div class="heart-group hearts"></div>
+
+</body>
+</html>
