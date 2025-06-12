@@ -1,118 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Just for You 💌</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ffe6f0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #444;
-      text-align: center;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<title>For You, Baby 💖</title>
+<style>
+body {
+background: #fffafc;
+font-family: 'Segoe UI', sans-serif;
+text-align: center;
+padding-top: 100px;
+overflow: hidden;
+}
 
-    .container {
-      position: relative;
-      top: 30%;
-      transform: translateY(-30%);
-    }
+h1 {
+font-size: 2.8em;
+color: #ff66a3;
+animation: zoomIn 2.5s ease forwards;
+}
 
-    .typing {
-      display: inline-block;
-      font-size: 1.5rem;
-      color: #d6336c;
-      white-space: nowrap;
-      border-right: 2px solid #d6336c;
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-      overflow: hidden;
-      width: 0;
-    }
+p {
+font-size: 1.3em;
+color: #444;
+margin-top: 20px;
+line-height: 1.7;
+animation: fadeIn 3.5s ease forwards;
+}
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+@keyframes zoomIn {
+0% { transform: scale(0.5); opacity: 0; }
+100% { transform: scale(1); opacity: 1; }
+}
 
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
+@keyframes fadeIn {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: translateY(0); }
+}
 
-    .hearts {
-      position: fixed;
-      bottom: -50px;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      animation: float 6s infinite ease-in;
-      border-radius: 50%;
-    }
+.heart {
+position: absolute;
+width: 20px;
+height: 20px;
+background: #ff4d6d;
+clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 80%, 18% 100%, 0% 35%);
+animation: float 5s infinite ease-in-out;
+}
 
-    @keyframes float {
-      0% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(-100px) translateY(-800px) scale(0.5);
-        opacity: 0;
-      }
-    }
+.heart:nth-child(1) { top: 80%; left: 20%; animation-delay: 0s; }
+.heart:nth-child(2) { top: 90%; left: 40%; animation-delay: 1s; }
+.heart:nth-child(3) { top: 85%; left: 70%; animation-delay: 2s; }
 
-    .hearts::before,
-    .hearts::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-    }
+@keyframes float {
+0% { transform: translateY(0) scale(1); opacity: 1; }
+100% { transform: translateY(-300px) scale(1.2); opacity: 0; }
+}
 
-    .hearts::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .hearts::after {
-      top: 0;
-      left: -10px;
-    }
-
-    .heart-group {
-      position: absolute;
-      animation-delay: 0s;
-    }
-
-    .heart-group:nth-child(1) { left: 10%; animation-delay: 1s; }
-    .heart-group:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .heart-group:nth-child(3) { left: 50%; animation-delay: 3s; }
-    .heart-group:nth-child(4) { left: 70%; animation-delay: 4s; }
-    .heart-group:nth-child(5) { left: 90%; animation-delay: 5s; }
-  </style>
+audio {
+display: none;
+}
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="typing">
-      Warning: You’ve just been hit with a random act of cuteness 😄💖
-    </div>
-    <p style="margin-top: 2rem; font-size: 1.2rem;">
-      This page exists for one reason only: <br>
-      To remind you that you're kinda awesome 🌟<br>
-      (And maybe to make you think of me too 😜)
-    </p>
-  </div>
+<h1>Hey Baby 🌙</h1>
+<p>
+Just dropping by to remind you how loved you are 💖<br>
+You light up my little world like the moon does the sky 🌕✨<br>
+Every thought of you makes me smile like a dork 🐻<br>
+You're my favorite person. Ever. 🌸💫<br><br>
+— Yours, always 💌
+</p>
 
-  <!-- Floating Hearts -->
-  <div class="heart-group hearts"></div>
-  <div class="heart-group hearts"></div>
-  <div class="heart-group hearts"></div>
-  <div class="heart-group hearts"></div>
-  <div class="heart-group hearts"></div>
+<!-- Floating hearts -->
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+
+<!-- Background music -->
+<audio autoplay loop>
+<source src="https://dl.sndup.net/38hx/Coldplay_Yellow_Instrumental.mp3" type="audio/mp3">
+Your browser does not support the audio tag.
+</audio>
 
 </body>
 </html>
